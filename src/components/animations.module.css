@@ -1,0 +1,56 @@
+.header {
+    margin: 0;
+    height: 100vh;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0;
+}
+
+#close {
+    animation: close 0.3s;
+    width: 0;
+    height: 0;
+}
+
+#open {
+    animation: open 0.5s;
+}
+
+#open2 {
+    animation: open2 0.5s;
+}
+
+@keyframes open {
+    from {
+        bottom: -200vh;
+        width: 20%;
+    } to {
+        bottom: 0;
+        width: 65%;
+    }
+}
+
+@keyframes open2 {
+    from {
+        bottom: -200vh;
+        width: 20%;
+    } to {
+        bottom: 0;
+        width: 65%;
+    }
+}
+
+@keyframes close {
+    from {
+        width: 65%;
+        bottom: 200vh;
+    } to {
+        width: 0%;
+        bottom: 0;
+    }
+}

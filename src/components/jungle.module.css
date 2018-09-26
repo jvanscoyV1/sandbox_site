@@ -1,0 +1,32 @@
+.jungle {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -10;
+    background-color: white;
+}
+
+.jungle_cover {
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+.jungle_img {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: -1;
+}
+
+@keyframes fade {
+    from {
+        background-color: rgba(255,255,255,1)
+    } to {
+        background-color: rgba(255,255,255,0.0)
+    }
+}

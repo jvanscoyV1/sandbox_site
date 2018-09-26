@@ -1,0 +1,160 @@
+.fog {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: -0vh;
+    z-index: -10;
+    overflow: hidden;
+    background:rgba(0, 0, 0, 0.8);
+    animation: fade 2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.fogHead {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    height: 4em;
+    background-color: rgba(255,255,255,1.0);
+    font-size: 3vw;
+    position: fixed;
+    color: red;
+    animation: reveal_text 5s;
+    opacity: 1.0;
+    margin: .5em;
+    text-align: center;
+}
+
+.fog_container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+ 
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fog_img1 {
+    position: absolute;
+    bottom: -50vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat-x;
+    animation: marquee 120s linear alternate-reverse infinite;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+ 
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 0;
+}
+
+.fog_img2 {
+    width: 300vw;
+    height: 150vh;
+    bottom: -70vh;
+    position: fixed;
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+    animation: marquee 60s linear alternate-reverse infinite;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+ 
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 5;
+}
+
+.fog_img3 {
+    width: 300vw;
+    height: 150vh;
+    bottom: -80vh;
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    animation: marquee2 30s linear alternate-reverse infinite;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    z-index: 10;
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.arrow {
+    width: 5vw;
+    animation: floatDown 3s;
+    bottom: 25vh;
+    position: fixed;
+}
+
+@keyframes fade {
+    from {
+        background-color: white;
+    } to {
+        background-color: rgba(0,0,0,0.8);
+    }
+}
+
+@keyframes marquee {
+  0% { transform: translate3d(0vw, 0vh, 0); }
+  48% { transform: translate3d(-98vw, 0vh, 0); }
+  50% { transform: translate3d(-100vw, 0vh, 0); }
+  52% { transform: translate3d(-98vw, 0vh, 0); }
+  100% { transform: translate3d(0, 0vh, 0); }
+}
+
+@keyframes marquee2 {
+    0% { transform: translate3d(-100vw, 0vh, 0); }
+    48% { transform: translate3d(-2vw, 0vh, 0); }
+    50% { transform: translate3d(0vw, 0vh, 0); }
+    52% { transform: translate3d(-2vw, 0vh, 0); }
+    100% { transform: translate3d(-100, 0vh, 0); }
+  }
+
+@keyframes reveal_text {
+    0% { background-color: rgba(255,255,255,0.0);}
+    20% {background-color: rgba(255,255,255,0.0);}
+    100% {
+        background-color: rgba(255,255,255,1.0);
+     }
+}
+
+
+@keyframes floatDown {
+    0% {
+        bottom: -10vh;
+    } 40% {
+        bottom: -50vh;
+    } 100% {
+        bottom: 25vh;
+    }
+}

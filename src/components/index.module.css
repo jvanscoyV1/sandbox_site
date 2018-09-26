@@ -1,0 +1,338 @@
+/* body, html {
+    overflow-x: hidden;
+} */
+
+h1 {
+    text-align: center;
+}
+@media only screen and (min-width: 1000px) {
+    .main {
+        height: 200vh;
+        width: 300vw;
+        z-index: -100;
+        
+        overflow: hidden;
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        /*
+        Introduced in IE 10.
+        See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+        */
+        -ms-user-select: none;
+        user-select: none;
+        display: grid;
+        grid-template-columns: 100vw 100vw 100vw;
+        grid-template-rows: 100vh 100vh 100vh;
+        justify-items: stretch;
+    }
+
+    .welcome_container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2;
+    }
+
+    .welcome {
+        animation: floatDown1 1s;
+        bottom: 55vh;
+    }
+
+    .name {
+        animation: floatDown2 2s;
+        bottom: 50vh;
+    }
+
+    .im {
+        animation: floatDown3 3s;
+        bottom: 45vh;
+    }
+
+    .arrow {
+        width: 5vw;
+        animation: floatDown4 3.7s;
+        bottom: 25vh;
+    }
+
+    .jungle {
+        position: absolute;
+        top: 100vh;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        background-color: black;
+    }
+
+    .jungle_left {
+        position: absolute;
+        top: 100vh;
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        background-color: black;
+    }
+
+    .jungle_cover {
+        position: absolute;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .jungle_img {
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        z-index: -1;
+    }
+
+    .ui_active {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 20vw auto 20vw;
+        grid-template-rows: 12vh auto 12vh;
+        justify-items: stretch;
+        grid-gap: 25px;
+        grid-auto-flow: dense;
+        animation: fadeInText1 2s;
+    }
+
+    .ui_inactive {
+        display: none;
+    }
+
+    .ui_active .ui_element {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transition: all smooth;
+    }
+
+    .ui_active .ui_element_main {
+        
+    }
+
+    .ui_active .ui_element_main h1 {
+        animation: fadeInText1 2s;
+        color: rgba(255,255,255,1.0);
+    }
+
+    .ui_active .ui_element_left {
+        margin-left: 5%;
+    }
+
+    .ui_active .ui_element_left:hover {
+        margin-left: 3%;
+    }
+
+
+
+    .ui_active .ui_element_left h1 {
+        font-size: 1.5em;
+        animation: fadeInText2 2s;
+        color: rgba(255,255,255,1.0);
+    }
+
+    .ui_active .ui_element_left .arrow_left {
+        transform: rotate(90deg);
+        animation: fadeInText2 2s;
+    }
+
+    .ui_active .ui_element_right {
+        margin-left: -5%;
+    }
+
+    .ui_active .ui_element_right:hover {
+        margin-left: -3%;
+    }
+
+    .ui_active .ui_element_right h1 {
+        font-size: 1.5em;
+        animation: fadeInText2 2s;
+        color: rgba(255,255,255,1.0);
+    }
+
+    .ui_active .ui_element_right .arrow_right {
+        transform: rotate(-90deg);
+        animation: fadeInText2 2s;
+    }
+
+    .ui_active .ui_element_up {
+        margin-top: 2%;
+        flex-direction: column;
+
+    }
+
+    .ui_active .ui_element_up:hover {
+        margin-top: 1%;
+    }
+
+    .ui_active .ui_element_up h1 {
+        font-size: 1.5em;
+        animation: fadeInText2 2s;
+        color: rgba(255,255,255,1.0);
+    }
+
+    .ui_active .ui_element_up .arrow_up {
+        transform: rotate(180deg);
+        animation: fadeInText2 2s;
+        width: 5vw;
+        height: 7.5vh;
+        margin: 0;
+    }
+
+    .ui_active .ui_element_down {
+        margin-top: -2%;
+        flex-direction: column;
+
+    }
+
+    .ui_active .ui_element_down:hover {
+        margin-top: -1%;
+    }
+
+    .ui_active .ui_element_down h1 {
+        font-size: 1.5em;
+        animation: fadeInText2 2s;
+        color: rgba(255,255,255,1.0);
+        height: 0;
+    }
+
+    .ui_active .ui_element_down .arrow_down {
+        transform: rotate(0deg);
+        animation: fadeInText2 2s;
+        width: 5vw;
+        height: 7.5vh;
+        margin-top: 0;
+    }
+
+    @keyframes fade {
+        from {
+            background-color: rgba(255,255,255,1)
+        } to {
+            background-color: rgba(255,255,255,0.0)
+        }
+    }
+
+    @keyframes fadeInText1 {
+        0% {
+            opacity: 0.0;
+        } 25% {
+            opacity: 1.0;
+        } 
+    }
+    @keyframes fadeInText2 {
+        0% {
+            opacity: 0.0;
+        } 25% {
+            opacity: 0.0;
+        } 100% {
+            opacity: 1.0;
+        }
+    }
+    @keyframes fadeInText3 {
+        0% {
+            opacity: 0.0;
+        } 50% {
+            opacity: 0.0;
+        } 75% {
+            opacity: 1.0;
+        }
+    }
+
+    @keyframes fadeInText4 {
+        0% {
+            opacity: 0.0;
+        } 75% {
+            opacity: 0.0;
+        } 100% {
+            opacity: 1.0;
+        }
+    }
+
+    @keyframes fadeInText5 {
+        0% {
+            opacity: 0.0;
+        } 80% {
+            opacity: 0.0;
+        } 100% {
+            opacity: 1.0;
+        }
+    }
+
+    @keyframes floatDown1 {
+        0% {
+            opacity: 0.0;
+            bottom: -10vh;
+        } 10% {
+            bottom: -10vh;
+        } 100% {
+            opacity: 1.0;
+            bottom: 55vh;
+        }
+    }
+
+
+    @keyframes floatDown2 {
+        0% {
+            opacity: 0.0;
+            bottom: -10vh;
+        } 40% {
+            bottom: -10vh;
+        } 100% {
+            opacity: 1.0;
+            bottom: 50vh;
+        }
+    }
+
+
+
+    @keyframes floatDown3 {
+        0% {
+            opacity: 0.0;
+            bottom: -10vh;
+        } 60% {
+            bottom: -10vh;
+        } 100% {
+            opacity: 1.0;
+            bottom: 45vh;
+        }
+    }
+
+
+    @keyframes floatDown4 {
+        0% {
+            opacity: 0.0;
+            bottom: -10vh;
+        } 70% {
+            bottom: -10vh;
+        } 100% {
+            opacity: 1.0;
+            bottom: 25vh;
+        }
+    }
+}
+/* 
+@keyframes waitforscroll {
+    0%{
+        overflow-y: hidden;
+    } 99% {
+        overflow-y: hidden;
+    } 100% {
+        overflow-y: scroll;
+    }
+} */

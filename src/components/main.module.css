@@ -1,0 +1,127 @@
+html {
+    overflow-x: hidden;
+}
+
+.main {
+    height: auto;
+    width: 100vw;
+    z-index: -100;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item_container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.message_container {
+    top: -100vh;
+    height: 100vh;
+    width: 90vw;
+    display: inline-block;
+}
+
+.dialog {
+    display: block;
+    position: relative;
+    width: auto;
+    height: auto;
+    z-index: 100;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 50vw;
+    font-size: 1em;
+    margin-bottom: 1vh;
+    word-wrap: break-word;
+    clear: both;
+}
+
+.dialog_left {
+    background-color: #E5E4E9;
+    float: left;
+}
+
+.dialog_left::before {
+    width: 0;
+    height: 0;
+    border-top: 50px solid #E5E4E9;
+    border-right: 60px solid transparent;
+    background-color: transparent;
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    content: "";
+    z-index: -100;
+    transform: rotate(10deg);
+}
+
+.dialog h1 {
+    font-size: 1.5em;
+    height: 1rem;
+}
+
+.dialog_left h1{
+    color: black;
+}
+
+.dialog_right {
+    background-color:#007AFF;
+    float: right;
+}
+
+.dialog_right::before {
+    width: 0;
+    height: 0;
+    border-top: 50px solid #007AFF;
+    border-left: 60px solid transparent;
+    background-color: transparent;
+    position: absolute;
+    bottom: -5px;
+    right: 0px;
+    content: "";
+    z-index: -100;
+    transform: rotate(-10deg);
+}
+
+.dialog_right h1{
+    color: white;
+}
+
+.animated {
+    animation: rotateText 1s linear infinite;
+}
+
+.animated_fly {
+    animation: superText 1s linear alternate-reverse infinite;
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg)
+    } 50% {
+        transform: rotate3d(0, 1, 0, 60deg)
+    } 100% {
+        transform: rotate3d(0, 1, 0, 0deg)
+    }
+}
+
+@keyframes superText {
+    0% {
+        transform: translate3d(0, 0, 0) rotate3d(0, 1, 1, 0deg)
+    } 50% {
+        transform: translate3d(20vw, 0, 0) rotate3d(0, 1, 1, 60deg)
+    } 100% {
+        transform: translate3d(0vw, 0, 0) rotate3d(0, 1, 1, 120deg)
+    }
+}
